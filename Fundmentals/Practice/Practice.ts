@@ -1,29 +1,71 @@
 // interface Person {
-//   name: string;
+//   readonly name: string;
 //   age: number;
+
 // }
 
 // const person: Person = { name: "Alice", age: 30 };
 
-// function greet(person: Person): string {
-//   return `Hello ${person.name}, you are ${person.age} years old.`;
+// function greet(person: Person, job:string = "Working as Developer Telus", jobId:number|string = "Xid12331"): string {
+//   return `Hello ${person.name}, you are ${person.age} years old and ${job} with ${jobId}.`;
 // }
-
+// // person.name = "Venkatesh";
 // console.log(greet(person));
 
+// const products:any[] = 
+//     [
+//        {
+//          id : 1,
+//         pname : "Laptop",
+//         price: 10000
+//        },
+//        {
+//          id : 2,
+//         pname : "Mobile",
+//         price: 50000
+//        },
+//        {
+//         id : 3,
+//         pname : "HeadPhone",
+//         price: 500
+//        }
+//     ];
 
-enum workingDays {
-   Monday = "Monday",
-   Tuesday = "Tuesday",
-   Wednesday = "Wednesday",
-   Thuesday = "Thuesday",
-   Friday = "Friday",
-   Saturday = "Saturday",
-   Sunday = "Sunday"
+// function filterPrice(products: any[]): any{
+// // return products.filter(item => item.price > 1000).map(item => item.pname);
+
+// for(let i=0; i<products.length; i++){
+//    if( products[i].price > 1000){
+//     console.log(products[i].pname);
+//    };
+// }
+// }
+// filterPrice(products);
+
+// enum workingDays {
+//    Monday = "Monday",
+//    Tuesday = "Tuesday",
+//    Wednesday = "Wednesday",
+//    Thuesday = "Thuesday",
+//    Friday = "Friday",
+//    Saturday = "Saturday",
+//    Sunday = "Sunday"
+// }
+
+// const weekday : workingDays[] = [workingDays.Monday,workingDays.Tuesday,workingDays.Wednesday,workingDays.Thuesday,workingDays.Friday];
+// const weekend : workingDays[] = [workingDays.Saturday,workingDays.Sunday];
+
+
+// console.log(weekend);
+
+
+
+
+function demo(value:any):any{
+
+    console.log(value);
+
 }
-
-const weekday : workingDays[] = [workingDays.Monday,workingDays.Tuesday,workingDays.Wednesday,workingDays.Thuesday,workingDays.Friday];
-const weekend : workingDays[] = [workingDays.Saturday,workingDays.Sunday];
-
-
-console.log(weekend);
+demo("hello");
+demo(1234);
+demo(true);

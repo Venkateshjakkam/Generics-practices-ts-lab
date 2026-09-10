@@ -1,23 +1,56 @@
 "use strict";
 // interface Person {
-//   name: string;
+//   readonly name: string;
 //   age: number;
 // }
 // const person: Person = { name: "Alice", age: 30 };
-// function greet(person: Person): string {
-//   return `Hello ${person.name}, you are ${person.age} years old.`;
+// function greet(person: Person, job:string = "Working as Developer Telus", jobId:number|string = "Xid12331"): string {
+//   return `Hello ${person.name}, you are ${person.age} years old and ${job} with ${jobId}.`;
 // }
+// // person.name = "Venkatesh";
 // console.log(greet(person));
-var workingDays;
-(function (workingDays) {
-    workingDays["Monday"] = "Monday";
-    workingDays["Tuesday"] = "Tuesday";
-    workingDays["Wednesday"] = "Wednesday";
-    workingDays["Thuesday"] = "Thuesday";
-    workingDays["Friday"] = "Friday";
-    workingDays["Saturday"] = "Saturday";
-    workingDays["Sunday"] = "Sunday";
-})(workingDays || (workingDays = {}));
-const weekday = [workingDays.Monday, workingDays.Tuesday, workingDays.Wednesday, workingDays.Thuesday, workingDays.Friday];
-const weekend = [workingDays.Saturday, workingDays.Sunday];
-console.log(weekend);
+// const products:any[] = 
+//     [
+//        {
+//          id : 1,
+//         pname : "Laptop",
+//         price: 10000
+//        },
+//        {
+//          id : 2,
+//         pname : "Mobile",
+//         price: 50000
+//        },
+//        {
+//         id : 3,
+//         pname : "HeadPhone",
+//         price: 500
+//        }
+//     ];
+// function filterPrice(products: any[]): any{
+// // return products.filter(item => item.price > 1000).map(item => item.pname);
+// for(let i=0; i<products.length; i++){
+//    if( products[i].price > 1000){
+//     console.log(products[i].pname);
+//    };
+// }
+// }
+// filterPrice(products);
+// enum workingDays {
+//    Monday = "Monday",
+//    Tuesday = "Tuesday",
+//    Wednesday = "Wednesday",
+//    Thuesday = "Thuesday",
+//    Friday = "Friday",
+//    Saturday = "Saturday",
+//    Sunday = "Sunday"
+// }
+// const weekday : workingDays[] = [workingDays.Monday,workingDays.Tuesday,workingDays.Wednesday,workingDays.Thuesday,workingDays.Friday];
+// const weekend : workingDays[] = [workingDays.Saturday,workingDays.Sunday];
+// console.log(weekend);
+function demo(value) {
+    console.log(value);
+}
+demo("hello");
+demo(1234);
+demo(true);
