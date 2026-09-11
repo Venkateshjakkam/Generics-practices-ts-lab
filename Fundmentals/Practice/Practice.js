@@ -48,9 +48,18 @@
 // const weekday : workingDays[] = [workingDays.Monday,workingDays.Tuesday,workingDays.Wednesday,workingDays.Thuesday,workingDays.Friday];
 // const weekend : workingDays[] = [workingDays.Saturday,workingDays.Sunday];
 // console.log(weekend);
-function demo(value) {
-    console.log(value);
+const numbers = [10, 20, 30];
+const names = ["Alice", "Bob", "Charlie"];
+const products = [
+    { id: 1, name: "Laptop" },
+    { id: 2, name: "Phone" }
+];
+let arr = ["apple", "banana", "GOA"];
+function getFirst(value) {
+    return value[0];
 }
-demo("hello");
-demo(1234);
-demo(true);
+console.log(getFirst(arr));
+console.log(getFirst(numbers));
+console.log(getFirst(names));
+console.log(getFirst(products));
+// console.log(demo(true));
