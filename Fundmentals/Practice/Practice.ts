@@ -76,3 +76,61 @@
 // console.log(getFirst(numbers));
 // console.log(getFirst(names));
 // console.log(getFirst(products));
+
+
+class Stack<T>{
+
+    private items: T[] = [];
+
+    push(item: T): void{
+         this.items.push(item);
+    }
+
+    pop(): T | undefined{
+        return this.items.pop();
+    }
+
+    peek(): T| undefined{
+        return this.items[this.items.length - 1];
+    }
+
+    isEmpty():boolean{
+       return this.items.length === 0;
+    }
+
+    size():number{
+        return this.items.length;
+    }
+}
+
+const numStack = new Stack<number>();
+
+numStack.push(10);
+numStack.push(20);
+numStack.push(30);
+numStack.push(40);
+numStack.push(50);
+numStack.push(60);
+
+console.log(numStack.peek());
+console.log(numStack.pop());
+console.log(numStack.size());
+console.log(numStack.isEmpty());
+
+
+const stringStack = new Stack<String>();
+
+console.log(stringStack.isEmpty());
+
+stringStack.push("Hockey");
+stringStack.push("Gym");
+stringStack.push("Circket");
+stringStack.push("VolleyBall");
+stringStack.push("BasketBall");
+
+console.log(stringStack.isEmpty());
+console.log(stringStack.peek());
+console.log(stringStack.pop());
+console.log(stringStack.size());
+
+
