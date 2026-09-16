@@ -1,13 +1,52 @@
-class TodoApp{
-       public items: string[] = ["Apple", "Banana", "Grape"];
+// class TodoApp{
+//        public items: string[] = ["Apple", "Banana", "Grape"];
          
-       constructor(){
-              this.items.push("pineApple");
-              this.items.forEach((item) => console.log(item));
-       }
-      
+//        addItem(item: string){
+//          this.items.push("pineApple");
+//        }
+
+//        removeItem(item: string){
+//             this.items.filter((i)=> i !== item);
+//        }
+
+//        listItems(item:string){
+//          this.items.forEach((item) => console.log(item));
+//        }
+// }
+
+// const todoApp = new TodoApp();
+// todoApp.listItems("");
+// console.log(todoApp.listItems);
+
+
+// Type Safe Calculator --- functions for add/subtract/multiply/divide with proper typing and error handling for divide-by-zero
+
+class Calculator{
+
+    add(x:number, y:number){
+        return x + y;
+    }
+
+    subtract(x:number,  y:number){
+        return x - y;
+    }
+
+    multiply(x:number, y:number){
+        return x * y;
+    }
+
+    divide(x:number, y:number){
+        if(y === 0){
+            return "Not Defined";
+        } else {
+            return x/y ;
+        }
+    }
 }
 
-const todoApp = new TodoApp();
-
-console.log(todoApp);
+const c = new Calculator();
+console.log(c.add(10,6));
+console.log(c.subtract(9,8));
+console.log(c.multiply(5,8));
+console.log(c.divide(10,2));
+console.log(c.divide(6,0));
