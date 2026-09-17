@@ -57,63 +57,63 @@
 // and returns typed error messages
 
 
-interface User {
-  name: string;
-  email: string;
-  phNumber: number;
-}
+// interface User {
+//   name: string;
+//   email: string;
+//   phNumber: number;
+// }
 
-type ValidationError = {
-  field: keyof User;
-  message: string;
-};
+// type ValidationError = {
+//   field: keyof User;
+//   message: string;
+// };
 
-class ValidationRule {
-  private user: User;
-  public errors: ValidationError[] = [];
+// class ValidationRule {
+//   private user: User;
+//   public errors: ValidationError[] = [];
 
-  constructor(user: User) {
-    this.user = user;
-  }
+//   constructor(user: User) {
+//     this.user = user;
+//   }
 
-  validate(): ValidationError[] {
-    this.errors = []; // reset errors
+//   validate(): ValidationError[] {
+//     this.errors = []; // reset errors
 
-    // Name validation
-    if (!this.user.name) {
-      this.errors.push({ field: "name", message: "Name is required" });
-    } else if (typeof this.user.name !== "string") {
-      this.errors.push({ field: "name", message: "Name must be a string" });
-    }
+//     // Name validation
+//     if (!this.user.name) {
+//       this.errors.push({ field: "name", message: "Name is required" });
+//     } else if (typeof this.user.name !== "string") {
+//       this.errors.push({ field: "name", message: "Name must be a string" });
+//     }
 
-    // Email validation
-    if (!this.user.email) {
-      this.errors.push({ field: "email", message: "Email is required" });
-    } else if (typeof this.user.email !== "string") {
-      this.errors.push({ field: "email", message: "Email must be a string" });
-    } else if (!this.user.email.includes("@")) {
-      this.errors.push({ field: "email", message: "Email is invalid" });
-    }
+//     // Email validation
+//     if (!this.user.email) {
+//       this.errors.push({ field: "email", message: "Email is required" });
+//     } else if (typeof this.user.email !== "string") {
+//       this.errors.push({ field: "email", message: "Email must be a string" });
+//     } else if (!this.user.email.includes("@")) {
+//       this.errors.push({ field: "email", message: "Email is invalid" });
+//     }
 
-    // Phone Number validation
-    if (this.user.phNumber === undefined || this.user.phNumber === null) {
-      this.errors.push({ field: "phNumber", message: "Phone number is required" });
-    } else if (typeof this.user.phNumber !== "number") {
-      this.errors.push({ field: "phNumber", message: "Phone number must be a number" });
-    }
+//     // Phone Number validation
+//     if (this.user.phNumber === undefined || this.user.phNumber === null) {
+//       this.errors.push({ field: "phNumber", message: "Phone number is required" });
+//     } else if (typeof this.user.phNumber !== "number") {
+//       this.errors.push({ field: "phNumber", message: "Phone number must be a number" });
+//     }
 
-    return this.errors;
-  }
-}
+//     return this.errors;
+//   }
+// }
 
-const user: User = {
-  name: "test Name",
-  email: "test@gmail.com",
-  phNumber: 9876543210
-};
+// const user: User = {
+//   name: "test Name",
+//   email: "test@gmail.com",
+//   phNumber: 9876543210
+// };
 
-const validator = new ValidationRule(user);
-const errors = validator.validate();
+// const validator = new ValidationRule(user);
+// const errors = validator.validate();
 
-console.log(errors);
-console.log(user);
+// console.log(errors);
+// console.log(user);
