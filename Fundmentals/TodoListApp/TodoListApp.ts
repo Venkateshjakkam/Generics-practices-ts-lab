@@ -1,22 +1,81 @@
-// class TodoApp{
-//        public items: string[] = ["Apple", "Banana", "Grape"];
+interface Todo{
+ id: number;
+ text: string; 
+ completed: boolean;
+ Status:String 
+}
+
+type TodoList = {
+    field: keyof Todo;
+   Status: "pending" | "in-progress" | "done"
+}
+
+class TodoApp{
+      public items: Todo[] = [
+             { id: 1, text: "Apple", completed: false ,Status:"pending"},
+             { id: 2, text: "Banana", completed: false , Status:"in-progress"},
+             { id: 3, text: "Grape", completed: true , Status: "done"},
+             { id: 4, text: "Pumpkin", completed: false , Status: "invalid"}
+            ];
          
-//        addItem(item: string){
-//          this.items.push("pineApple");
-//        }
+       addItem(text: string){
+        const newTodo: Todo = {
+            id: Date.now(),
+            text: text,
+            completed: false,
+            Status:text
+        };
+         this.items.push(newTodo);
+       }
 
-//        removeItem(item: string){
-//             this.items.filter((i)=> i !== item);
-//        }
+      removeItem(id: number) {
+    this.items = this.items.filter((item) => item.id !== id);
+  }
 
-//        listItems(item:string){
-//          this.items.forEach((item) => console.log(item));
-//        }
-// }
+ 
+  listItems() {
+    this.items.forEach((item) => {
+      const status = item.completed ? "[X]" : "[ ]";
+      console.log(`${status} ${item.id}: ${item.text}`);
+    });
+  }
 
-// const todoApp = new TodoApp();
-// todoApp.listItems("");
-// console.log(todoApp.listItems);
+
+  toggleComplete(id: number){
+    this.items = this.items.map((itm)=> {
+        if(itm.id === id){
+            return {
+                ...itm,
+                completed: !itm.completed
+            }
+        }
+        return itm;
+    });
+  }
+
+  getCompletedTodos(): Todo[]{
+   return this.items.filter((itr)=> itr.completed === false);
+  }
+
+  updateStatus(id: number, status: String) {
+    const item = this.items.find((i) => i.id === id);
+    if (item) {
+      item.Status = status;
+      if (status === "done") {
+        item.completed = true;
+      }
+    }
+  }
+
+}
+
+const todoApp = new TodoApp();
+
+todoApp.updateStatus(2, "done");
+
+todoApp.listItems();
+console.log("\nCompleted Todos:", todoApp.getCompletedTodos());
+
 
 
 // Type Safe Calculator --- functions for add/subtract/multiply/divide with proper typing and error handling for divide-by-zero
@@ -106,14 +165,3 @@
 //   }
 // }
 
-// const user: User = {
-//   name: "test Name",
-//   email: "test@gmail.com",
-//   phNumber: 9876543210
-// };
-
-// const validator = new ValidationRule(user);
-// const errors = validator.validate();
-
-// console.log(errors);
-// console.log(user);
