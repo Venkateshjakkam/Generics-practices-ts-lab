@@ -1,5 +1,27 @@
 class Calc{
 
+    public makeList:any = [];
+
+   async addItem(text: string):Promise<string>{
+    try{
+        this.makeList.push(text);
+        return this.makeList;
+
+    }catch(error){
+        const message = error instanceof Error ? error.message : String(error);
+            this.state.error = message;
+            console.log("Error state:", this.state.error);
+       
+
+        if(this.makeList.length = 0){
+            return undefined | "InValid";
+        }
+             
+    };
+    }
+
+
+
      public state: {loading: boolean; error: string | null } = {
                     loading: true,
                     error: null
@@ -33,4 +55,7 @@ class Calc{
 
 
  const c = new Calc();
- console.log(c.divide(9,3));
+ console.log(c.divide(9,0));
+ console.log(c.addItem("myFirstItem"));
+ console.log(c.addItem("I am Your First Love"));
+  console.log(c.addItem("May be Just making Love"));
