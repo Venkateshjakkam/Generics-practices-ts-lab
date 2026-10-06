@@ -1,5 +1,3 @@
-export {};
-
 type Method = "GET" | "POST" | "PUT";
 type Path = "/users" | "/products";
 
@@ -21,7 +19,7 @@ type FetchPayload<M extends Method, P extends Path> = M extends "GET"
 async function apiRequest<M extends Method, P extends Path>(
   method: M,
   path: P,
-  ...args: FetchPayload<M, P> extends never ? [] : [payload: FetchPayload<M, P>] 
+  ...args: FetchPayload<M, P> extends never ? [] : [payload: FetchPayload<M, P>]
 ) {
   try {
     // Optional: Extract payload safely from rest args if needed
