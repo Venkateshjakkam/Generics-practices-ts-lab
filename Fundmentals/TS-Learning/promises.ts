@@ -24,7 +24,7 @@ interface User {
 
 async function getUserData(): Promise<User[] | string> { 
   try { 
-    const response: Response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const response: Response = await fetch("https://jsonplaceholder.typicode.com/users  ");
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
