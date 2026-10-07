@@ -9,20 +9,18 @@ type ResourceMap = {
   "/products": Product;
 };
 
-// 1. Solution for FetchPayload:
-// If Method is "GET", return never. Otherwise, look up the Path inside ResourceMap.
+
 type FetchPayload<M extends Method, P extends Path> = M extends "GET" 
   ? never 
   : ResourceMap[P];
 
-// 2. Strongly type the function declaration
 async function apiRequest<M extends Method, P extends Path>(
   method: M,
   path: P,
   ...args: FetchPayload<M, P> extends never ? [] : [payload: FetchPayload<M, P>]
 ) {
   try {
-    // Optional: Extract payload safely from rest args if needed
+   
     const payload = args[0]; 
     
     const options: RequestInit = { method };
