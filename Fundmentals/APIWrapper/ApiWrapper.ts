@@ -38,21 +38,17 @@ async function apiRequest<M extends Method, P extends Path>(
   }
 }
 
-// ==========================================
-// TEST CASES (Try hover testing these!)
-// ==========================================
 
-// ✅ Compiles perfectly (Zero arguments allowed for payload)
+
 apiRequest("GET", "/users");
 
-// ✅ Compiles perfectly (Requires exactly a User object)
 apiRequest("POST", "/users", { id: 1, name: "Alice" });
 
-// ❌ ERROR: Argument of type '{ id: number; title: string; }' is not assignable...
+
 // apiRequest("GET", "/products", { id: 2, title: "Phone" });
 
-// ❌ ERROR: Expected 2 arguments, but got 3. (Missing payload entirely)
+
 // apiRequest("POST", "/products");
 
-// ❌ ERROR: Property 'name' is missing in type '{ id: number; title: string; }'
+
 // apiRequest("PUT", "/users", { id: 3, title: "Laptop" }); 
